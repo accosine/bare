@@ -9,3 +9,6 @@
 - content negotiation (negotiator)
 - sessions (redsess)
 - ETags (custom + node-fresh)
+- configuraton (nconf)
+- logging (winston)
+
