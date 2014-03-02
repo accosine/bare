@@ -1,0 +1,27 @@
+{
+  "name": "bare",
+  "version": "0.0.0",
+  "description": "The opposite of a framework",
+  "main": "app.js",
+  "scripts": {
+    "test": "make test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/dkolba/bare.git"
+  },
+  "keywords": [
+    "bare",
+    "framework",
+    "web",
+    "api",
+    "router",
+    "rest",
+    "app"
+  ],
+  "author": "Duncan Kolba",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/dkolba/bare/issues"
+  }
+}
