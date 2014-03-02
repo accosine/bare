@@ -1,0 +1,11 @@
+- cookies module (cookies)
+- uploads module (formidable)
+- favicon
+- gzip
+- cache
+- templates (dust.js/plates)
+- sanitize
+- mime types (mime)
+- content negotiation (negotiator)
+- sessions (redsess)
+- ETags (custom + node-fresh)
