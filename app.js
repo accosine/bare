@@ -1,17 +1,14 @@
-var http = require('http')
-  , paramify = require('paramify')
-  , controller = require('./controller');
+'use strict';
+var bare = require('./lib/bare')
+  , http = require('http');
 
-// var props = {partials: [react.DOM.div, react.DOM.img, react.DOM.a, react.DOM.ol]};
+bare.router.on('get', '/test', function(req, res) {
+  res.writeHead(200, {'Content-Type': 'text/plain'});
+  res.end('Testseite\n');
+  console.log('Testseite');
+});
 
-http.createServer(function (req, res) {
-  var match = paramify(req.url);
-
-  res.writeHead(200, {'Content-Type': 'text/html'});
-
-  if (match('/*')) {
-    controller.showIndex(req, res)
-  }
-
+// TODO: 404 callback if route does not exist
+http.createServer(function(req, res) {
+  bare.router.dispatch(req, res, console.log);
 }).listen(8080);
-console.log('Server running at http://localhost:8080/');

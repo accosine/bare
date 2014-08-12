@@ -25,6 +25,7 @@
     "url": "https://github.com/dkolba/bare/issues"
   },
   "dependencies": {
-    "react": "~0.11.0"
+    "react": "^0.11.0",
+    "paramify": "^0.1.2"
   }
 }
