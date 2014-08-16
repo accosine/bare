@@ -4,7 +4,7 @@
   "description": "The opposite of a framework",
   "main": "app.js",
   "scripts": {
-    "test": "make test"
+    "test": "lab"
   },
   "repository": {
     "type": "git",
@@ -27,5 +27,8 @@
   "dependencies": {
     "react": "^0.11.0",
     "paramify": "^0.1.2"
+  },
+  "devDependencies": {
+    "lab": "^4.0.2"
   }
 }
