@@ -6,12 +6,21 @@ var Lab = require('lab')
   , it = lab.test
   , expect = Lab.expect;
 
-describe('bare should exist and at least have a router', function () {
-  it('it tests for object and functions', function (done) {
+describe('bare should exist', function () {
+  it('tests for object and functions', function (done) {
+
+    expect(bare).to.be.an('object');
+
+    done();
+  });
+});
+
+describe('bare should be able to route', function () {
+  it('tests if routes get added to routing table', function (done) {
 
     bare.router.on('GET', '/', function() {});
 
-    expect(bare).to.be.an('object');
+    expect(bare.router).to.be.an('object');
     expect(bare.router._routes.get).to.be.an('array');
     expect(bare).to.have.property('router');
     expect(bare.router._routes.get[0]).to.have.property('handler');
@@ -20,5 +29,32 @@ describe('bare should exist and at least have a router', function () {
     expect(bare.router.dispatch).to.be.a('function');
 
     done();
-  })
-})
+  });
+});
+
+describe('bare should be able to use middleware', function () {
+  it('it tests if req and res can be modified via middleware', function (done) {
+    var req = {}
+      , res = {};
+
+    function modReqRes (req, res, cb) {
+      req.abc = 'abc';
+      res.asdf = 'asdf';
+      cb();
+    }
+
+    bare.middleware.use(modReqRes(req, res, function() {}));
+    bare.middleware.handle(req, res, function(req, res) {});
+
+    expect(bare.middleware).to.be.an('object');
+    expect(bare.middleware).to.have.property('use');
+    expect(bare.middleware).to.have.property('handle');
+    expect(bare.middleware.use).to.be.a('function');
+    expect(bare.middleware.handle).to.be.a('function');
+
+    expect(req.abc).to.equal('abc');
+    expect(res.asdf).to.equal('asdf');
+    done();
+  });
+});
+

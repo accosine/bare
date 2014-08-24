@@ -1,6 +1,6 @@
 {
   "name": "bare",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "The opposite of a framework",
   "main": "app.js",
   "scripts": {
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/dkolba/bare.git"
+    "url": "git://github.com/accosine/bare.git"
   },
   "keywords": [
     "bare",
@@ -19,10 +19,14 @@
     "rest",
     "app"
   ],
-  "author": "Duncan Kolba",
+  "author": "accosine.com",
+  "contributors": [
+    "Simon Bugert <simon.bugert@gmail.com>",
+    "Duncan Kolba <duncankolba@gmail.com>"
+  ],
   "license": "BSD-2-Clause",
   "bugs": {
-    "url": "https://github.com/dkolba/bare/issues"
+    "url": "https://github.com/accosine/bare/issues"
   },
   "dependencies": {
     "react": "^0.11.0",
