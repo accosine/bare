@@ -29,7 +29,7 @@
     "url": "https://github.com/accosine/bare/issues"
   },
   "dependencies": {
-    "react": "^0.11.0",
+    "react": "^16.13.1",
     "paramify": "^0.1.2"
   },
   "devDependencies": {
